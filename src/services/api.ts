@@ -1,14 +1,21 @@
 import axios from 'axios';
 
-// Create axios instance with default configuration
+// Pick backend URL from Vite env, fallback to localhost during dev
+const ROOT_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+
+// Debug log (helps during deploy)
+console.log('🔗 Using backend URL:', ROOT_URL);
+
+// Axios instance with correct base path
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${ROOT_URL}/api`,   // IMPORTANT: append /api here
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: false,
 });
 
-// Request interceptor to add auth token
+// Attach JWT token automatically
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -17,17 +24,14 @@ api.interceptors.request.use(
     }
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response interceptor to handle errors
+// Handle expired/invalid token responses globally
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      // Token expired or invalid
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/login';
@@ -36,4 +40,4 @@ api.interceptors.response.use(
   }
 );
 
-export default api; 
+export default api;

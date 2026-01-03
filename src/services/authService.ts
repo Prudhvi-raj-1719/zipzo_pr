@@ -47,9 +47,9 @@ class AuthService {
       const response = await api.post('/auth/register', data);
       console.log('authService.register response:', response.data);
       return response.data;
-    } catch (error) {
+    } catch (error: any) {
       console.error('authService.register error:', error);
-      if (error.response) {
+      if (error?.response) {
         console.error('Error response:', error.response.data);
         return error.response.data;
       }

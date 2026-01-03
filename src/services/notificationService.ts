@@ -14,8 +14,14 @@ export interface Notification {
 export interface NotificationResponse {
   success: boolean;
   message: string;
-  notifications?: Notification[];
-  notification?: Notification;
+  // Server returns notifications under `data.notifications`
+  data?: {
+    notifications?: Notification[];
+    notification?: Notification;
+  };
+  // additional metadata
+  count?: number;
+  unreadCount?: number;
 }
 
 class NotificationService {
@@ -44,7 +50,7 @@ class NotificationService {
   }
 
   // Socket.IO methods for real-time notifications
-  connectSocket(userId: string, onNotification: (notification: Notification) => void) {
+  connectSocket(_userId: string, onNotification: (notification: Notification) => void) {
     // Start polling for now (30s). Keep interval id to allow disconnecting.
     if (this.pollInterval) return; // already polling
     this.startPolling(onNotification);
