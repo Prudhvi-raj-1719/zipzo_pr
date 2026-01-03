@@ -43,10 +43,23 @@ app.set('io', io);
 app.use(helmet());
 
 // CORS configuration
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://zipzo-pr.vercel.app",
+  "https://zipzo-2xczapoyk-prudhvis-projects-17cabe6e.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  origin: (origin, callback) => {
+    // allow requests with no origin (mobile apps, curl etc.)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error("Not allowed by CORS"));
+  },
   credentials: true
 }));
+
 
 // Rate limiting
 const limiter = rateLimit({
