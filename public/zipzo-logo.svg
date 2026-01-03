@@ -1,0 +1,98 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4682B4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background sky -->
+  <rect width="64" height="64" fill="url(#skyGradient)"/>
+  
+  <!-- City buildings silhouette -->
+  <g fill="#B0C4DE" opacity="0.6">
+    <rect x="5" y="35" width="3" height="25"/>
+    <rect x="10" y="30" width="4" height="30"/>
+    <rect x="16" y="25" width="3" height="35"/>
+    <rect x="21" y="32" width="2" height="28"/>
+    <rect x="25" y="28" width="3" height="32"/>
+    <rect x="30" y="35" width="4" height="25"/>
+    <rect x="36" y="30" width="3" height="30"/>
+    <rect x="41" y="27" width="2" height="33"/>
+    <rect x="45" y="33" width="3" height="27"/>
+    <rect x="50" y="29" width="4" height="31"/>
+    <rect x="56" y="35" width="3" height="25"/>
+  </g>
+  
+  <!-- Road -->
+  <rect x="0" y="55" width="64" height="9" fill="#4A5568"/>
+  <line x1="0" y1="59.5" x2="64" y2="59.5" stroke="white" stroke-width="1" stroke-dasharray="4,4"/>
+  
+  <!-- Background scooters -->
+  <g fill="#87CEEB" opacity="0.4">
+    <!-- Left background scooter -->
+    <ellipse cx="15" cy="58" rx="2" ry="1"/>
+    <ellipse cx="17" cy="58" rx="2" ry="1"/>
+    <rect x="14" y="52" width="6" height="3" fill="#87CEEB" opacity="0.4"/>
+    <circle cx="15" cy="58" r="1" fill="#4A5568"/>
+    <circle cx="17" cy="58" r="1" fill="#4A5568"/>
+    
+    <!-- Right background scooter -->
+    <ellipse cx="49" cy="58" rx="2" ry="1"/>
+    <ellipse cx="51" cy="58" rx="2" ry="1"/>
+    <rect x="48" y="52" width="6" height="3" fill="#87CEEB" opacity="0.4"/>
+    <circle cx="49" cy="58" r="1" fill="#4A5568"/>
+    <circle cx="51" cy="58" r="1" fill="#4A5568"/>
+  </g>
+  
+  <!-- Main scooter -->
+  <g>
+    <!-- Scooter body -->
+    <rect x="28" y="48" width="8" height="4" fill="#D3D3D3"/>
+    <rect x="30" y="46" width="4" height="6" fill="#D3D3D3"/>
+    
+    <!-- Wheels -->
+    <ellipse cx="30" cy="58" rx="2" ry="1" fill="#2D3748"/>
+    <ellipse cx="34" cy="58" rx="2" ry="1" fill="#2D3748"/>
+    <circle cx="30" cy="58" r="1" fill="#4A5568"/>
+    <circle cx="34" cy="58" r="1" fill="#4A5568"/>
+    
+    <!-- Handlebar -->
+    <line x1="28" y1="46" x2="26" y2="44" stroke="#2D3748" stroke-width="1"/>
+    <line x1="38" y1="46" x2="40" y2="44" stroke="#2D3748" stroke-width="1"/>
+    
+    <!-- Headlight -->
+    <circle cx="40" cy="47" r="0.5" fill="#FFD700"/>
+    
+    <!-- Seat -->
+    <rect x="30" y="45" width="4" height="1" fill="#8B4513"/>
+  </g>
+  
+  <!-- Driver (man) -->
+  <g>
+    <!-- Helmet -->
+    <ellipse cx="30" cy="42" rx="1.5" ry="1" fill="#2D3748"/>
+    <!-- Body -->
+    <rect x="29" y="43" width="2" height="3" fill="#2B6CB0"/>
+    <!-- Arms -->
+    <line x1="28" y1="44" x2="26" y2="44" stroke="#2B6CB0" stroke-width="0.5"/>
+    <line x1="32" y1="44" x2="34" y2="44" stroke="#2B6CB0" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Passenger (woman) -->
+  <g>
+    <!-- Helmet -->
+    <ellipse cx="34" cy="42" rx="1.5" ry="1" fill="#2D3748"/>
+    <!-- Hair -->
+    <path d="M 33 42 Q 33.5 41 34 42 Q 34.5 41 35 42" stroke="#8B4513" stroke-width="0.3" fill="none"/>
+    <!-- Body -->
+    <rect x="33" y="43" width="2" height="3" fill="#E53E3E"/>
+    <!-- Arms -->
+    <line x1="32" y1="44" x2="30" y2="44" stroke="#E53E3E" stroke-width="0.5"/>
+    <line x1="36" y1="44" x2="38" y2="44" stroke="#E53E3E" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Zipzo text -->
+  <text x="32" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#2D3748">zipzo</text>
+  <text x="32" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="4" fill="#2D3748">zip your way everyday</text>
+</svg> 
